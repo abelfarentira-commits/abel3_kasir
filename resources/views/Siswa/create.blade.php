@@ -9,8 +9,8 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-             <form action="{{ route('siswa.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf 
+             <form action="{{ route('Siswa.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
 
                 <div class="form-group">
                     <label for="nama_siswa">Nama Siswa</label>
@@ -63,7 +63,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="{{ route('siswa.index') }}" class="btn btn-secondary">Batal</a>
+                <a href="{{ route('Siswa.index') }}" class="btn btn-secondary">Batal</a>
             </form>
         </div>
     </div>

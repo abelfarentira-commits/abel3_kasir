@@ -12,16 +12,16 @@
         <div class="card-header">
             <h3 class="card-title">Daftar Siswa</h3>
             <div class="card-tools">
-               
-                <a href="{{ route('siswa.create') }}" class="btn btn-primary btn-sm">
+
+                <a href="{{ route('Siswa.create') }}" class="btn btn-primary btn-sm">
                     <i class="fas fa-plus"></i> Tambah Siswa
                 </a>
             </div>
         </div>
-        
+
         {{-- Bagian Pencarian & Alert (Diberi padding agar rapi) --}}
         <div class="card-body pb-0">
-            <form action="{{ route('siswa.index') }}" method="GET" class="mb-3">
+            <form action="{{ route('Siswa.index') }}" method="GET" class="mb-3">
                 <div class="input-group">
                     <input type="text" name="search" class="form-control" placeholder="Cari nama Siswa atau NIS" value="{{ request('search') }}">
                     <div class="input-group-append">
@@ -50,8 +50,8 @@
                         <th style="width: 10px">No</th>
                         <th>Nama Siswa</th>
                         <th>NIS</th>
-                        <th>Jurusan</th> 
-                        <th>Kelas</th>   
+                        <th>Jurusan</th>
+                        <th>Kelas</th>
                         <th>Email</th>
                         <th>Aksi</th>
                     </tr>
@@ -62,18 +62,18 @@
                         <td>{{ $siswas->firstItem() + $key }}</td>
                         <td>{{ $siswa->nama_siswa }}</td>
                         <td>{{ $siswa->nis }}</td>
-                        <td>{{ $siswa->jurusan }}</td> 
-                        <td>{{ $siswa->kelas }}</td>   
+                        <td>{{ $siswa->jurusan }}</td>
+                        <td>{{ $siswa->kelas }}</td>
                         <td>{{ $siswa->email }}</td>
                         <td>
                             {{-- Tombol Aksi disinkronkan stylenya (btn-sm, icon only) --}}
-                            <a class="btn btn-info btn-sm" href="{{ route('siswa.show', $siswa->id) }}" title="Lihat">
+                            <a class="btn btn-info btn-sm" href="{{ route('Siswa.show', $siswa->id) }}" title="Lihat">
                                 <i class="bi bi-eye"></i>
                             </a>
-                            <a href="{{ route('siswa.edit', $siswa->id) }}" class="btn btn-warning btn-sm" title="Edit">
+                            <a href="{{ route('Siswa.edit', $siswa->id) }}" class="btn btn-warning btn-sm" title="Edit">
                                 <i class="bi bi-pencil"></i>
                             </a>
-                            <form action="{{ route('siswa.destroy', $siswa->id) }}" method="POST" style="display: inline-block;">
+                            <form action="{{ route('Siswa.destroy', $siswa->id) }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" title="Hapus">

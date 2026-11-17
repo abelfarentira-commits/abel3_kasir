@@ -58,11 +58,11 @@
         </div>
 
         <div class="card-footer">
-            <a href="{{ route('kelas.index') }}" class="btn btn-secondary">
+            <a href="{{ route('Kelas.index') }}" class="btn btn-secondary">
                 Kembali
             </a>
 
-            <a href="{{ route('kelas.edit', $kelas->id) }}" class="btn btn-warning">
+            <a href="{{ route('Kelas.edit', $kelas->id) }}" class="btn btn-warning">
                 <i class="fas fa-edit"></i> Edit
             </a>
         </div>

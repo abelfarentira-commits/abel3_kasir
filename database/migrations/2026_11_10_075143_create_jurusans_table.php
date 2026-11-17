@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('jurusans', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_jurusan')->unique();
+            $table->string('kode_jurusan');
             $table->string('nama_jurusan');
-            $table->string('keterangan')->nullable();
-            $table->string('status')->default('aktif');
+            $table->string('keterangan');
+            $table->string('status');
             $table->timestamps();
         });
     }

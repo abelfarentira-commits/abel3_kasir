@@ -7,86 +7,54 @@
 @stop
 
 @section('content')
+    <div class="card">
+        <div class="card-body">
+             <form action="{{ route('Jurusan.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
 
-<div class="card">
-    <div class="card-header">
-        <h3 class="card-title">Form Tambah Jurusan</h3>
+                <div class="form-group">
+                    <label for="kode_jurusan">Kode Jurusan</label>
+                    <input type="text" name="kode_jurusan" class="form-control @error('kode_jurusan') is-invalid @enderror" id="kode_jurusan" required value="{{ old('kode_jurusan') }}">
+                    @error('kode_jurusan')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="nama_jurusan">Nama Jurusan</label>
+                    <input type="text" name="nama_jurusan" class="form-control @error('nama_jurusan') is-invalid @enderror" id="nama_jurusan" required value="{{ old('nama_jurusan') }}">
+                    @error('nama_jurusan')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="keterangan">Keterangan</label>
+                    <input type="text" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" id="keterangan" required placeholder="" value="{{ old('keterangan') }}">
+                    @error('keterangan')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <input type="text" name="status" class="form-control @error('status') is-invalid @enderror" id="status" required placeholder="" value="{{ old('status') }}">
+                    @error('status')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <button type="submit" class="btn btn-primary">Simpan</button>
+                <a href="{{ route('Jurusan.index') }}" class="btn btn-secondary">Batal</a>
+            </form>
+        </div>
     </div>
-
-    <div class="card-body">
-
-        <form action="{{ route('jurusan.store') }}" method="POST">
-            @csrf
-
-            <div class="form-group">
-                <label for="kode_jurusan">Kode Jurusan</label>
-                <input
-                    type="text"
-                    name="kode_jurusan"
-                    id="kode_jurusan"
-                    class="form-control"
-                    placeholder="Masukkan kode jurusan"
-                    value="{{ old('kode_jurusan') }}"
-                    required
-                >
-            </div>
-
-
-            <div class="form-group">
-                <label for="nama_jurusan">Nama Jurusan</label>
-                <input
-                    type="text"
-                    name="nama_jurusan"
-                    id="nama_jurusan"
-                    class="form-control"
-                    placeholder="Masukkan nama jurusan"
-                    value="{{ old('nama_jurusan') }}"
-                    required
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="keterangan">Keterangan</label>
-                <textarea
-                    name="keterangan"
-                    id="keterangan"
-                    class="form-control"
-                    rows="3"
-                    placeholder="Masukkan keterangan"
-                >{{ old('keterangan') }}</textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="status">Status</label>
-                <select
-                    name="status"
-                    id="status"
-                    class="form-control"
-                    required
-                >
-                    <option value="">-- Pilih Status --</option>
-
-                    <option value="aktif" {{ old('status') == 'aktif' ? 'selected' : '' }}>
-                        Aktif
-                    </option>
-
-                    <option value="nonaktif" {{ old('status') == 'nonaktif' ? 'selected' : '' }}>
-                        Non-Aktif
-                    </option>
-                </select>
-            </div>
-
-            <button type="submit" class="btn btn-primary">
-                Simpan
-            </button>
-
-            <a href="{{ route('jurusan.index') }}" class="btn btn-secondary">
-                Kembali
-            </a>
-
-        </form>
-
-    </div>
-</div>
-
 @stop

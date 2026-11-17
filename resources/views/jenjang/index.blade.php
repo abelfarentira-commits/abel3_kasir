@@ -12,7 +12,7 @@
         <div class="card-header">
             <h3 class="card-title">Daftar Jenjang</h3>
             <div class="card-tools">
-                <a href="{{ route('jenjang.create') }}" class="btn btn-primary btn-sm">
+                <a href="{{ route('Jenjang.create') }}" class="btn btn-primary btn-sm">
                     <i class="fas fa-plus"></i> Tambah Jenjang
                 </a>
             </div>
@@ -20,7 +20,7 @@
 
         {{-- Bagian Pencarian & Alert (Diberi padding agar rapi) --}}
         <div class="card-body pb-0">
-            <form action="{{ route('jenjang.index') }}" method="GET" class="mb-3">
+            <form action="{{ route('Jenjang.index') }}" method="GET" class="mb-3">
                 <div class="input-group">
                     <input type="text" name="search" class="form-control" placeholder="Cari nama Jenjang atau Kode" value="{{ request('search') }}">
                     <div class="input-group-append">
@@ -65,13 +65,13 @@
                         <td>{{ $jenjang->status }}</td>
                         <td>
                             {{-- Tombol Aksi disinkronkan stylenya (btn-sm, icon only) --}}
-                            <a class="btn btn-info btn-sm" href="{{ route('jenjang.show', $jenjang->id) }}" title="Lihat">
+                            <a class="btn btn-info btn-sm" href="{{ route('Jenjang.show', $jenjang->id) }}" title="Lihat">
                                 <i class="bi bi-eye"></i>
                             </a>
-                            <a href="{{ route('jenjang.edit', $jenjang->id) }}" class="btn btn-warning btn-sm" title="Edit">
+                            <a href="{{ route('Jenjang.edit', $jenjang->id) }}" class="btn btn-warning btn-sm" title="Edit">
                                 <i class="bi bi-pencil"></i>
                             </a>
-                            <form action="{{ route('jenjang.destroy', $jenjang->id) }}" method="POST" style="display: inline-block;">
+                            <form action="{{ route('Jenjang.destroy', $jenjang->id) }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" title="Hapus">

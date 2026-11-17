@@ -57,11 +57,11 @@
         </div>
 
         <div class="card-footer">
-            <a href="{{ route('siswa.index') }}" class="btn btn-secondary">
+            <a href="{{ route('Siswa.index') }}" class="btn btn-secondary">
                 Kembali
             </a>
 
-            <a href="{{ route('siswa.edit', $siswa->id) }}" class="btn btn-warning">
+            <a href="{{ route('Siswa.edit', $siswa->id) }}" class="btn btn-warning">
                 <i class="fas fa-edit"></i> Edit
             </a>
         </div>

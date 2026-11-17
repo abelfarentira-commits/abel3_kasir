@@ -9,7 +9,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('kelas.store') }}" method="POST">
+            <form action="{{ route('Kelas.store') }}" method="POST">
                 @csrf
 
                 <div class="form-group">
@@ -84,7 +84,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="{{ route('kelas.index') }}" class="btn btn-secondary">Batal</a>
+                <a href="{{ route('Kelas.index') }}" class="btn btn-secondary">Batal</a>
             </form>
         </div>
     </div>

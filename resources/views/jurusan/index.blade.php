@@ -12,8 +12,7 @@
         <div class="card-header">
             <h3 class="card-title">Daftar Jurusan</h3>
             <div class="card-tools">
-
-                <a href="{{ route('jurusan.create') }}" class="btn btn-primary btn-sm">
+                <a href="{{ route('Jurusan.create') }}" class="btn btn-primary btn-sm">
                     <i class="fas fa-plus"></i> Tambah Jurusan
                 </a>
             </div>
@@ -21,9 +20,9 @@
 
         {{-- Bagian Pencarian & Alert (Diberi padding agar rapi) --}}
         <div class="card-body pb-0">
-            <form action="{{ route('jurusan.index') }}" method="GET" class="mb-3">
+            <form action="{{ route('Jurusan.index') }}" method="GET" class="mb-3">
                 <div class="input-group">
-                    <input type="text" name="search" class="form-control" placeholder="Cari nama Jurusan atau kode Jurusan" value="{{ request('search') }}">
+                    <input type="text" name="search" class="form-control" placeholder="Cari nama jurusan" value="{{ request('search') }}">
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="submit">
                             <i class="fas fa-search"></i> Cari
@@ -52,7 +51,6 @@
                         <th>Nama Jurusan</th>
                         <th>Keterangan</th>
                         <th>Status</th>
-                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,13 +63,13 @@
                         <td>{{ $jurusan->status }}</td>
                         <td>
                             {{-- Tombol Aksi disinkronkan stylenya (btn-sm, icon only) --}}
-                            <a class="btn btn-info btn-sm" href="{{ route('jurusan.show', $jurusan->id) }}" title="Lihat">
+                            <a class="btn btn-info btn-sm" href="{{ route('Jurusan.show', $jurusan->id) }}" title="Lihat">
                                 <i class="bi bi-eye"></i>
                             </a>
-                            <a href="{{ route('jurusan.edit', $jurusan->id) }}" class="btn btn-warning btn-sm" title="Edit">
+                            <a href="{{ route('Jurusan.edit', $jurusan->id) }}" class="btn btn-warning btn-sm" title="Edit">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
-                            <form action="{{ route('jurusan.destroy', $jurusan->id) }}" method="POST" style="display: inline-block;">
+                            <form action="{{ route('Jurusan.destroy', $jurusan->id) }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" title="Hapus">

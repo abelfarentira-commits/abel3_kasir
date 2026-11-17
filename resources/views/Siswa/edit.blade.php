@@ -9,7 +9,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('siswa.update', $siswa->id) }}" method="POST">
+            <form action="{{ route('Siswa.update', $siswa->id) }}" method="POST">
                 @csrf
                 @method('PUT')
 
@@ -39,7 +39,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">Update</button>
-                <a href="{{ route('siswa.index') }}" class="btn btn-secondary">Batal</a>
+                <a href="{{ route('Siswa.index') }}" class="btn btn-secondary">Batal</a>
             </form>
         </div>
     </div>

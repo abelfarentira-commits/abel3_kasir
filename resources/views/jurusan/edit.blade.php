@@ -9,13 +9,13 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('jurusan.update', $jurusan->id) }}" method="POST">
+            <form action="{{ route('Jurusan.update', $jurusan->id) }}" method="POST">
                 @csrf
                 @method('PUT')
 
-                 <div class="form-group">
+                <div class="form-group">
                     <label for="kode_jurusan">Kode Jurusan</label>
-                    <input type="text" name="kode_jurusan" class="form-control" id="nis" value="{{ $jurusan->kode_jurusan }}" required>
+                    <input type="text" name="kode_jurusan" class="form-control" id="kode_jurusan" value="{{ $jurusan->kode_jurusan }}" required>
                 </div>
 
                 <div class="form-group">
@@ -34,7 +34,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">Update</button>
-                <a href="{{ route('jurusan.index') }}" class="btn btn-secondary">Batal</a>
+                <a href="{{ route('Jurusan.index') }}" class="btn btn-secondary">Batal</a>
             </form>
         </div>
     </div>

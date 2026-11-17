@@ -12,7 +12,7 @@
         <div class="card-header">
             <h3 class="card-title">Daftar Kelas</h3>
             <div class="card-tools">
-                <a href="{{ route('kelas.create') }}" class="btn btn-primary btn-sm">
+                <a href="{{ route('Kelas.create') }}" class="btn btn-primary btn-sm">
                     <i class="fas fa-plus"></i> Tambah Kelas
                 </a>
             </div>
@@ -20,7 +20,7 @@
 
         {{-- Pencarian dan Alert --}}
         <div class="card-body pb-0">
-            <form action="{{ route('kelas.index') }}" method="GET" class="mb-3">
+            <form action="{{ route('Kelas.index') }}" method="GET" class="mb-3">
                 <div class="input-group">
                     <input type="text" name="search" class="form-control"
                         placeholder="Cari nama kelas atau status"
@@ -74,20 +74,20 @@
                         <td>
                             {{-- Tombol Lihat --}}
                             <a class="btn btn-info btn-sm"
-                                href="{{ route('kelas.show', $kelas->id) }}"
+                                href="{{ route('Kelas.show', $kelas->id) }}"
                                 title="Lihat">
                                 <i class="bi bi-eye"></i>
                             </a>
 
                             {{-- Tombol Edit --}}
-                            <a href="{{ route('kelas.edit', $kelas->id) }}"
+                            <a href="{{ route('Kelas.edit', $kelas->id) }}"
                                 class="btn btn-warning btn-sm"
                                 title="Edit">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
 
                             {{-- Tombol Hapus --}}
-                            <form action="{{ route('kelas.destroy', $kelas->id) }}"
+                            <form action="{{ route('Kelas.destroy', $kelas->id) }}"
                                 method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
